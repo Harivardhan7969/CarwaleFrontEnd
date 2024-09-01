@@ -1,0 +1,64 @@
+<div class="container mx-auto py-8">
+    <div class="overflow-x-auto">
+        <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+            <thead class="bg-gray-800">
+                <tr>
+                    <th
+                        class="py-3 px-5 border-b border-gray-300 text-left text-gray-100 uppercase font-semibold text-sm">
+                        Category Name</th>
+                    <th
+                        class="py-3 px-5 border-b border-gray-300 text-left text-gray-100 uppercase font-semibold text-sm">
+                        Featured</th>
+                    <th
+                        class="py-3 px-5 border-b border-gray-300 text-left text-gray-100 uppercase font-semibold text-sm">
+                        Car Image</th>
+                    <th
+                        class="py-3 px-5 border-b border-gray-300 text-left text-gray-100 uppercase font-semibold text-sm">
+                        Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let category of categories; let i = index"
+                    class="even:bg-gray-100 odd:bg-white hover:bg-gray-200">
+                    <td class="py-3 px-5 border-b border-gray-300">{{ category.name }}</td>
+                    <td class="py-3 px-5 border-b border-gray-300"> <i
+                            [class]="category.isFeatured ? 'material-icons text-green-500 icon-2xl' : 'material-icons text-red-500 icon-2xl'">
+                            {{ category.isFeatured ? 'check_circle' : 'cancel' }} </i></td>
+                    <td class="py-3 px-5 border-b border-gray-300">
+                        <img [src]="category.image.url" alt="Car Image" class="h-16 w-16 object-cover rounded">
+                    </td>
+                    <td class=" px-5 border-b border-gray-300 flex gap-2  mx-auto py-8">
+                        <button (click)="getCategoryToUpdate(category.id)"
+                            class="  text-blue-500 hover:text-blue-800 transition-colors">
+                            <i class="material-icons">edit</i>
+                        </button>
+                        <button class="text-red-500 hover:text-red-600 transition-colors"
+                            (click)="deletecategory(category.id)">
+                            <i class="material-icons">delete</i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div>
+    <div class="mt-6">
+        <form [formGroup]="addCategoryForm" (ngSubmit)="addOrUpdateCategory()"
+            class="flex flex-col sm:flex-row items-center gap-4">
+            <input formControlName="categoryName" placeholder="Car Name"
+                class="border py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <label class="flex items-center">
+                <input formControlName="isFeatured" type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" />
+                <span class="ml-2 text-gray-700">Featured</span>
+            </label>
+            <input type="file" (change)="onFileChange($event)" formControlName="image"
+                class="border py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+
+            <button class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 transition-colors" type="submit"
+                [disabled]="addCategoryForm.invalid">
+                {{ editMode ? 'Update Row' : 'Add Row' }}
+            </button>
+        </form>
+    </div>
+</div>

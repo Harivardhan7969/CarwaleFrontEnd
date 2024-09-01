@@ -1,0 +1,78 @@
+<div class="min-h-screen flex flex-col">
+    <div class="flex flex-1 flex-col md:flex-row">
+        <aside class="w-full md:w-64 bg-gray-700 text-white flex flex-col justify-between p-4">
+            <div>
+                <div class="flex flex-col items-center p-4 border-b border-gray-600">
+                    <img src="{{ user.avatarUrl }}" alt="User Avatar" class="w-24 h-24 rounded-full">
+                    <div class="mt-4 text-center">
+                        <h2 class="text-lg font-semibold text-primary">{{ user.name }}</h2>
+                        <p class="text-sm text-gray-300">{{ user.email }}</p>
+                    </div>
+                </div>
+
+                <ul class="mt-4">
+                    <li class="py-2"><a
+                            class="text-gray-300 hover:bg-gray-900 hover:text-white px-3 py-2 rounded-md text-base font-medium">Home</a>
+                    </li>
+                    <li class="py-2"><a (click)="addBrand()"
+                            class="text-gray-300 hover:bg-gray-900 hover:text-white px-3 py-2 rounded-md text-base font-medium">Add
+                            Brand</a>
+                    </li>
+                    <li class="py-2"><a (click)="addcategory()"
+                            class="text-gray-300 hover:bg-gray-900 hover:text-white px-3 py-2 rounded-md text-base font-medium">Add
+                            Category</a>
+                    </li>
+                    <li class="py-2"><a routerLink="/all-brands"
+                            class="text-gray-300 hover:bg-gray-900 hover:text-white px-3 py-2 rounded-md text-base font-medium">All
+                            Brands</a>
+                    </li>
+                    <li class="py-2"><a routerLink="/all-categories"
+                            class="text-gray-300 hover:bg-gray-900 hover:text-white px-3 py-2 rounded-md text-base font-medium">All
+                            Categories</a>
+                    </li>
+
+                    <li class="py-2"><a
+                            class="text-gray-300 hover:bg-gray-900 hover:text-white px-3 py-2 rounded-md text-base font-medium">Setting</a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="mt-auto">
+                <button
+                    class="min-w-min text-right py-2 px-4 text-gray-300 hover:bg-gray-900 hover:text-white rounded-md text-base font-medium">Logout</button>
+            </div>
+        </aside>
+
+        <div>
+
+            @if (navigateBrand) {
+
+            <app-add-brand></app-add-brand>
+            }
+            @if (navigateCategory) {
+            <app-add-category></app-add-category>
+            }
+
+        </div>
+
+
+        <!-- <app-buyer-car-list></app-buyer-car-list> -->
+        <!-- <main class="flex-1 bg-gray-100 p-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-white p-4 rounded shadow">
+                    <h2 class="text-xl font-bold">Card 1</h2>
+                    <p>Content for card 1</p>
+                </div>
+                <div class="bg-white p-4 rounded shadow">
+                    <h2 class="text-xl font-bold">Card 2</h2>
+                    <p>Content for card 2</p>
+                </div>
+                <div class="bg-white p-4 rounded shadow">
+                    <h2 class="text-xl font-bold">Card 3</h2>
+                    <p>Content for card 3</p>
+                </div>
+            </div>
+        </main> -->
+    </div>
+</div>

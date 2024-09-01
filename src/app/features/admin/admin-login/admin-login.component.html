@@ -1,0 +1,39 @@
+<div class="min-h-screen flex items-center justify-center bg-gray-100">
+    <div class="max-w-md w-full bg-white p-8 rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold mb-6 text-center">Admin Sign In </h2>
+        <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700 font-poppins font-semibold">Email</label>
+                <input id="email" type="email" formControlName="email"
+                    class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring border-orange-500 hover:border-customOrange"
+                    placeholder="Enter your email" />
+                <div *ngIf="submitted && f['email'].errors?.['required']" class="text-red-500 text-sm">
+                    Email is required
+                </div>
+            </div>
+            <div class="mb-6">
+                <label for="password" class="block text-gray-700 font-poppins font-semibold">Password</label>
+                <input id="password" type="password" formControlName="password"
+                    class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring border-orange-500"
+                    placeholder="Enter your password" />
+                <div *ngIf="submitted && f['password'].errors?.['required']" class="text-red-500 text-sm">
+                    Password is required
+                </div>
+                <div>
+
+                    <div class="pr-15">
+                        <a href="#" (click)="onForgetPassword($event)" class="text-black-500 text-blue-800">Forgot
+                            password?</a>
+                    </div>
+
+                </div>
+            </div>
+            <button type="submit" [ngClass]="{'shake': showShakeAnimation}"
+                class="w-full bg-customOrange text-black py-2 rounded-full hover:bg-customOrange">Sign In</button>
+            <br><br>
+
+
+        </form>
+    </div>
+</div>
+<app-footer></app-footer>

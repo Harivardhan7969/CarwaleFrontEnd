@@ -1,0 +1,141 @@
+<div class="min-h-screen flex items-center justify-center ">
+    <div class="max-w-md w-full bg-white p-4 rounded-lg shadow-md ">
+        <h2 class="text-2xl font-bold mb-6 text-center">Seller Sign Up</h2>
+        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+            <div class="mb-4">
+
+                <label for="fullName" class="block text-gray-700 font-semibold">Full Name</label>
+                <input id="fullName" type="text" formControlName="fullName"
+                    class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring "
+                    placeholder="Enter your full name">
+
+                <div>
+
+                    @if (signUpForm.get('fullName')?.touched) {
+                    <p class="text-red-500 text-sm">
+                        @if (signUpForm.get('fullName')?.errors && signUpForm.get('fullName')?.errors?.['required']) {
+                        Name is required
+                        }
+
+                    </p>
+                    }
+                    @if (signUpForm.get('fullName')?.errors && signUpForm.get('fullName')?.errors?.['pattern']) {
+
+                    <p class="text-red-500 text-sm">
+                        Name must contain only letters and minlength 4 max length 29
+
+                    </p>
+                    }
+
+
+
+                </div>
+
+
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700 font-semibold">Email</label>
+                <input type="email" formControlName="email"
+                    class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring "
+                    placeholder="Enter your email">
+
+                <div>
+                    @if (signUpForm.get('email')?.touched) {
+                    @if (signUpForm.get('email')?.errors && signUpForm.get('email')?.errors?.['required']) {
+                    <p class="text-red-500 text-sm">
+                        Email is required
+                    </p>
+                    }
+                    @else if(signUpForm.touched && signUpForm.get('email')?.errors &&
+                    signUpForm.get('email')?.errors?.['email'])
+                    {
+                    <p class="text-red-500 text-sm">
+                        Enter valid Email
+                    </p>
+                    }
+
+                    }
+
+
+
+
+                </div>
+            </div>
+            <!-- <div class="mb-4">
+          <label for="username" class="block text-gray-700 font-semibold">Username</label>
+          <input id="username" type="text" formControlName="username"
+            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
+            placeholder="Enter your username">
+          <div *ngIf=" signUpForm.touched && signUpForm.controls['username'].errors?.['required']"
+            class="text-red-500 text-sm">
+            Username is required
+          </div>
+        </div> -->
+
+
+            <!-- this is tool tip -->
+            <div class="mb-4">
+                <label for="password" class="block text-gray-700 font-semibold">Password</label>
+
+
+                <div class="relative group">
+                    <input type="password"
+                        class="w-full border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Enter your password" formControlName="password">
+                    <div class="tooltip top-0 left-full ml-2 text-white">
+                        Password must be at least 8 characters long at least one special char and one number capital
+                        letter
+                    </div>
+
+
+                </div>
+                <div>
+                    @if (signUpForm.get('password')?.touched) {
+                    @if (signUpForm.get('password')?.errors && signUpForm.get('password')?.errors?.['required']) {
+                    <p class="text-red-500 text-sm">
+                        Password is required
+                    </p>
+                    }
+                    @else if (signUpForm.get('password')?.errors && signUpForm.get('password')?.errors?.['pattern']) {
+                    <p class="text-red-500 text-sm">
+                        Enter valid Password
+                    </p>
+                    }
+                    }
+
+
+                </div>
+
+
+            </div>
+            <div class="mb-4">
+                <label for="confirmPassword" class="block text-gray-700 font-semibold">Confirm Password</label>
+                <input id="confirmPassword" type="password" formControlName="confirmPassword"
+                    class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300"
+                    placeholder="Confirm your password">
+                <div class="text-red-500 text-sm">
+                    @if (signUpForm.get('confirmPassword')?.touched &&signUpForm.get('confirmPassword')?.errors &&
+                    signUpForm.get('confirmPassword')?.errors?.['required']) {
+                    Confirm Password is required
+                    }
+                </div>
+                <div class="text-red-500">
+                    @if (signUpForm.touched && !passwordMatching && signUpForm.controls['confirmPassword'].dirty) {
+                    Confirm Password not matching with password
+                    }
+
+                </div>
+            </div>
+
+            <button type="submit" class="w-full  bg-customOrange text-black py-2 rounded-full hover:bg-customOrange"
+                [disabled]="signUpForm.invalid" (click)="signUp()">Sign Up</button>
+
+
+        </form>
+        <div>
+            @if(errorRegistering){
+            {{errorMessage}}
+            }
+        </div>
+    </div>
+</div>

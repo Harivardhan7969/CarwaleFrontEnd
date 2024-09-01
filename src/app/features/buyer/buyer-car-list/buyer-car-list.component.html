@@ -1,0 +1,99 @@
+<!-- car-list.component.html -->
+<div class="-mx-4 flex flex-wrap items-center mb-6">
+    <div class="px-4 w-full md:w-10/12 ml-10 mt-5">
+        <h2 class="font-medium mb-1 text-primary-500 text-xl">Our Top Cars</h2>
+        <h3 class="capitalize font-bold mb-4 text-4xl text-gray-900">Cars for all your needs</h3>
+        <div class="bg-primary-500 mb-6 pb-1 w-2/12"></div>
+    </div>
+</div>
+<div class="flex">
+    <!-- Sidebar for filters -->
+    <div class="w-1/4 p-4 bg-white-900-300 shadow-md">
+
+        <h3 class="text-lg font-bold mb-2">Filter by</h3>
+
+
+        <div class="mb-4">
+            <label class="block text-sm font-medium mb-1">Brand</label>
+            <select [(ngModel)]="selectedBrand" (change)="filterCars()" class="w-full p-2 border rounded">
+                <option value="">All</option>
+                <option value="bmw">bmw</option>
+                <option value="audi">Audi</option>
+                <option value="mahendra">Mahendra</option>
+                <option value="tata">TATA</option>
+                <option value="skoda">Skoda</option>
+
+
+            </select>
+        </div>
+
+
+        <div class="mb-4">
+            <label class="block text-sm font-medium mb-1">Color</label>
+            <select [(ngModel)]="selectedColor" (change)="filterCars()" class="w-full p-2 border rounded">
+                <option value="">All</option>
+                <option value="Red">Red</option>
+                <option value="Blue">Blue</option>
+
+            </select>
+        </div>
+
+
+        <div class="mb-4">
+            <label class="block text-sm font-medium mb-1">Price Range</label>
+            <input type="range" min="0" max="100000" [(ngModel)]="selectedPriceRange[0]" (input)="filterCars()"
+                class="w-full">
+            <input type="range" min="0" max="100000" [(ngModel)]="selectedPriceRange[1]" (input)="filterCars()"
+                class="w-full">
+            <div class="flex justify-between text-sm">
+                <span>${{ selectedPriceRange[0] }}</span>
+                <span>${{ selectedPriceRange[1] }}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 pl-10 pr-10 ">
+        <div *ngFor="let car of carsList " class="p-2">
+
+
+            <div class="-mx-3 flex flex-wrap justify-center mb-12 mr-4 " routerLink="/car-details/{{car.id}}">
+                <div class="">
+                    <div class="bg-white border shadow-md text-gray-500 rounded-sm">
+
+
+                        <div class="p-6">
+                            <img [src]="car.image" class="hover:opacity-90 w-full h-40 rounded-md" alt="..." width="600"
+                                height="450" alt="No image" />
+                            <h4 class="font-bold mb-2 text-gray-900 text-xl"><a href="#"
+                                    class="hover:text-gray-500">{{car.name}}</a></h4>
+                            <p class="mb-2 text-sm">{{car.description | slice:0:10}}</p>
+                            <hr class="border-gray-200 my-4">
+                            <div class="flex items-center justify-between">
+                                <div class="inline-flex items-center py-0 space-x-1">
+                                    <span>4.7</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                        width="1.125em" height="1.125em" class="text-primary-500">
+                                        <g>
+                                            <path fill="none" d="M0 0h24v24H0z"></path>
+                                            <path
+                                                d="M12 18.26l-7.053 3.948 1.575-7.928L.587 8.792l8.027-.952L12 .5l3.386 7.34 8.027.952-5.935 5.488 1.575 7.928z">
+                                            </path>
+                                        </g>
+                                    </svg>
+                                    <span>(245 reviews)</span>
+                                </div>
+                                <p class="font-bold text-gray-900">{{car.price | currency: "INR"}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="text-center">
+    <a routerLink="/buyer-car-list" class="bg-primary-500 hover:bg-primary-600 inline-block px-6 py-2 text-white">View
+        All
+        Cars</a>
+</div>

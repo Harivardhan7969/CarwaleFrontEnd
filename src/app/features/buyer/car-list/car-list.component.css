@@ -1,0 +1,17 @@
+/* car-list.component.css */
+.car-list {
+    display: flex;
+  }
+  .car-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px;
+  }
+  
+  /* user-profile.component.css */
+  .user-profile {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  

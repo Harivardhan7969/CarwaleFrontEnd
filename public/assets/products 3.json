@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "name": "Hyundai Creta",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "img": "../assets/images/Hyundai Creta.webp",
+        "price": "Rs. 11.00 Lakh onwards",
+        "category": " SUV"
+    },
+    {
+        "id": 2,
+        "name": "Mahindra xuv-3xo",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+        "img": "../assets/images/Mahindra xuv-3xo.webp",
+        "price": "Rs. 7.49 Lakh onwards",
+        "category": "Compact crossover SUV"
+    },
+    {
+        "id": 3,
+        "name": "Mahindra xuv700",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+        "img": "../assets/images/Mahindra xuv700.webp",
+        "price": "Rs. 13.99 Lakh onwards",
+        "category": "SUV"
+    },
+    {
+        "id": 4,
+        "name": "Mahindra-Scorpio-n",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+        "img": "../assets/images/Mahindra-Scorpio-n.webp",
+        "price": "Rs. 13.85 Lakh onwards",
+        "category": "Compact SUV"
+    },
+    {
+        "id": 5,
+        "name": "Maruti-Fronx",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+        "img": "../assets/images/Maruti Fronx.webp",
+        "price": " Rs. 7.51 Lakh onwards",
+        "category": "subCompact crossover SUV"
+    },
+    {
+        "id": 6,
+        "name": "Maruti-Swift",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+        "img": "../assets/images/Maruti Swift.webp",
+        "price": "Rs. 6.49 Lakh onwards",
+        "category": "Hatchback"
+    },
+    {
+        "id": 7,
+        "name": "Skoda Slavia",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+        "img": "src/assets/images/Skoda Slavia.webp",
+        "price": "Rs. 10.69 Lakh onwards",
+        "category": "Sedan"
+    },
+    {
+        "id": 8,
+        "name": "Tata-Nexon",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+        "img": "src/assets/images/Tata-Nexon.webp",
+        "price": "Rs. 8.00 Lakh onwards",
+        "category": "subCompact crossover SUV"
+    },
+    {
+        "id": 9,
+        "name": "Tata-punch",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+        "img": "../assets/images/Tata-punch.webp",
+        "price": "Rs. 6.13 Lakh onwards",
+        "category": "Compact SUV"
+    },
+    {
+        "id": 10,
+        "name": "Toyato Urban Crusior Taisor",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+        "img": "../assets/images/Toyato Urban  Crusior Taisor.webp",
+        "price": "Rs. 7.74 Lakh onwards",
+        "category": "SUV"
+    }
+]

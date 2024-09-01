@@ -1,0 +1,53 @@
+<div class="container mx-auto py-8">
+  <div class="overflow-x-auto">
+    <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+      <thead class="bg-gray-800">
+        <tr>
+          <th class="py-3 px-5 border-b border-gray-300 text-left text-gray-100 uppercase font-semibold text-sm">Car
+            Name</th>
+          <th class="py-3 px-5 border-b border-gray-300 text-left text-gray-100 uppercase font-semibold text-sm">
+            Featured</th>
+          <th class="py-3 px-5 border-b border-gray-300 text-left text-gray-100 uppercase font-semibold text-sm">Car
+            Image</th>
+          <th class="py-3 px-5 border-b border-gray-300 text-left text-gray-100 uppercase font-semibold text-sm">Actions
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of rows; let i = index" class="even:bg-gray-100 odd:bg-white hover:bg-gray-200">
+          <td class="py-3 px-5 border-b border-gray-300">{{ row.carName }}</td>
+          <td class="py-3 px-5 border-b border-gray-300">{{ row.featured ? 'Yes' : 'No' }}</td>
+          <td class="py-3 px-5 border-b border-gray-300">
+            <img [src]="row.carImage" alt="Car Image" class="h-16 w-16 object-cover rounded">
+          </td>
+          <td class=" px-5 border-b border-gray-300 flex gap-2  mx-auto py-8">
+            <button class="bg-orange-500 text-white py-3 px-5 rounded hover:bg-orange-600 transition-colors"
+              (click)="editRow(i)">
+              Edit
+            </button>
+            <button class="bg-red-500 text-white py-1 px-3 rounded hover:bg-red-600 transition-colors"
+              (click)="deleteRow(i)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="mt-6">
+    <form [formGroup]="rowForm" (ngSubmit)="addOrUpdateRow()" class="flex flex-col sm:flex-row items-center gap-4">
+      <input formControlName="carName" placeholder="Car Name"
+        class="border py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      <label class="flex items-center">
+        <input formControlName="featured" type="checkbox" class="form-checkbox h-5 w-5 text-blue-600" />
+        <span class="ml-2 text-gray-700">Featured</span>
+      </label>
+      <input type="file" (change)="onFileChange($event)"
+        class="border py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      <button class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 transition-colors" type="submit"
+        [disabled]="rowForm.invalid">
+        {{ editMode ? 'Update Row' : 'Add Row' }}
+      </button>
+    </form>
+  </div>
+</div>

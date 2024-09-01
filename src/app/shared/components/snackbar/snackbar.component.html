@@ -1,0 +1,7 @@
+<div *ngIf="isVisible"
+  class="fixed bottom-5 right-5 bg-gray-800 text-customOrange p-4 rounded shadow-lg transition duration-300"
+  [ngClass]="{'opacity-0': !isVisible, 'opacity-100': isVisible}">
+  
+  {{ message }}
+
+</div>

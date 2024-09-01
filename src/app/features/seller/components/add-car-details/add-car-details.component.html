@@ -1,0 +1,156 @@
+<div class="mt-10 ml-10 sm:ml-40 flex justify-center items-center min-h-screen bg-gray-100 p-2">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-3xl">
+        <h2 class="text-2xl font-bold text-center mb-6">Seller Form</h2>
+        <form [formGroup]="sellerForm" (ngSubmit)="onSubmit()">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <div class="relative">
+                    <label for="carname" class="block text-gray-700">Car name</label>
+                    <div class="flex items-center mt-1">
+                        <i class="material-icons text-gray-400 mr-2">directions_car</i>
+                        <input id="carname" formControlName="carname" type="text"
+                            class="w-full py-2 px-4 border rounded-lg focus:outline-none focus:border-blue-500"
+                            placeholder="Car name">
+                    </div>
+                </div>
+                <div class="relative">
+                    <label for="carNumber" class="block text-gray-700">Car Number</label>
+                    <div class="flex items-center mt-1">
+                        <i class="material-icons text-gray-400 mr-2">directions_car</i>
+                        <input id="carNumber" formControlName="carNumber" type="text"
+                            class="w-full py-2 px-4 border rounded-lg focus:outline-none focus:border-blue-500"
+                            placeholder="Car Number">
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <div class="relative">
+                    <label for="brand" class="block text-gray-700">Brand Name</label>
+                    <div class="flex items-center mt-1">
+                        <i class="material-icons text-gray-400 mr-2">directions_car</i>
+                        <select id="brand" formControlName="brand"
+                            class="w-full py-2 px-4 border rounded-lg focus:outline-none focus:border-blue-500">
+                            <option value="" selected disabled>Select Brands</option>
+                            <option *ngFor="let brand of brands">{{ brand.brandName }}
+                            </option>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="relative">
+                    <label for="category" class="block text-gray-700">Category</label>
+                    <div class="flex items-center mt-1">
+                        <i class="material-icons text-gray-400 mr-2">category</i>
+                        <select id="category" formControlName="category"
+                            class="w-full py-2 px-4 border rounded-lg focus:outline-none focus:border-blue-500">
+                            <option value="" selected disabled>Select Category</option>
+                            <option *ngFor="let category of categories">{{ category.name }}
+                            </option>
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <div class="relative">
+                    <label for="contact" class="block text-gray-700">Contact</label>
+                    <div class="flex items-center mt-1">
+                        <i class="material-icons text-gray-400 mr-2">phone</i>
+                        <input id="contact" formControlName="contact" type="number"
+                            class="w-full py-2 px-4 border rounded-lg focus:outline-none focus:border-blue-500"
+                            placeholder="Enter number">
+                    </div>
+                </div>
+                <div class="relative">
+                    <label for="description" class="block text-gray-700">Description</label>
+                    <div class="flex items-center mt-1">
+                        <i class="material-icons text-gray-400 mr-2">description</i>
+                        <textarea id="description" formControlName="description"
+                            class="w-full py-2 px-4 border rounded-lg focus:outline-none focus:border-blue-500"
+                            placeholder="Description"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <div class="relative">
+                    <label for="fuelType" class="block text-gray-700">Fuel Type</label>
+                    <div class="flex items-center mt-1">
+                        <i class="material-icons text-gray-400 mr-2">local_gas_station</i>
+                        <select id="fuelType" formControlName="fuelType"
+                            class="w-full py-2 px-4 border rounded-lg focus:outline-none focus:border-blue-500">
+
+                            <option value="" selected disabled>Select Fuel Type</option>
+                            <option value="PETROL">Petrol</option>
+                            <option value="diesel">Diesel</option>
+                            <option value="electric">Electric</option>
+                            <option value="hybrid">Hybrid</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="relative">
+                    <label for="price" class="block text-gray-700">Price</label>
+                    <div class="flex items-center mt-1">
+                        <i class="material-icons text-gray-400 mr-2">money</i>
+                        <input id="price" formControlName="price" type="number"
+                            class="w-full py-2 px-4 border rounded-lg focus:outline-none focus:border-blue-500"
+                            placeholder="Price">
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <div class="relative">
+                    <label for="carModel" class="block text-gray-700">Car Model</label>
+                    <div class="flex items-center mt-1">
+                        <i class="material-icons text-gray-400 mr-2">build</i>
+                        <input id="carModel" formControlName="carModel" type="text"
+                            class="w-full py-2 px-4 border rounded-lg focus:outline-none focus:border-blue-500"
+                            placeholder="Car model">
+                    </div>
+                </div>
+                <div class="relative">
+                    <label for="carImage" class="block text-gray-700">Add Car Images</label>
+                    <div class="flex items-center mt-1">
+                        <input id="carImage" formControlName="carImage" type="file" class="hidden"
+                            (change)="onFileSelected($event)">
+                        <label for="carImage"
+                            class="w-full flex items-center py-2 px-4 border rounded-lg bg-white cursor-pointer">
+                            <i class="material-icons text-gray-400 mr-2">photo_upload</i>
+                            <span class="text-gray-700">Choose File</span>
+
+                        </label>
+
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <h5 class="text-xl font-semibold mb-2">Location</h5>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="relative">
+                        <label for="currentLocation" class="block text-gray-700">Current Location</label>
+                        <div class="flex items-center mt-1">
+                            <i class="material-icons text-gray-400 mr-2">place</i>
+                            <input id="currentLocation" formControlName="currentLocation" type="text"
+                                class="w-full py-2 px-4 border rounded-lg focus:outline-none focus:border-blue-500"
+                                placeholder="Current Location">
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <label for="pinCode" class="block text-gray-700">Pin Code</label>
+                        <div class="flex items-center mt-1">
+                            <i class="material-icons text-gray-400 mr-2">map</i>
+                            <input id="pinCode" formControlName="pinCode" type="text"
+                                class="w-full py-2 px-4 border rounded-lg focus:outline-none focus:border-blue-500"
+                                placeholder="Pin code">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button (click)="addCar()" type="submit"
+                class="w-full bg-customOrange py-2 px-4 rounded-lg hover:bg-primary focus:outline-none focus:bg-primary text-black-300">
+                Submit
+            </button>
+        </form>
+    </div>
+</div>
